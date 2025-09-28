@@ -1,1 +1,2 @@
-This is the official remote location for all the Arduino directories I use for my projects.
+This is the official Arduino directory I use for my projects.
+
