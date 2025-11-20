@@ -13,9 +13,9 @@ const int IN4 = 11; //connect IN4 to digital pin 11
 Stepper stepper(steps_per_revolution, IN1, IN2, IN3, IN4); //initialize stepper motor
 
 void setup() {
-
-  pinMode(sw_pin, INPUT_PULLUP); //set switch as input with internal pull-up resistor
+  
   Serial.begin(9600); //initialize serial port
+  pinMode(sw_pin, INPUT_PULLUP); //set switch as input with internal pull-up resistor 
 }
 
 void loop() {
