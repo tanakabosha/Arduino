@@ -1,4 +1,5 @@
-/* This is Arduino Uno code for 28BYJ-48 stepper motor control using HW-504 joystick*/
+/* This is an Arduino Uno sketch for 28BYJ-48 stepper motor control using HW-504 joystick */
+
 #include <Stepper.h>
 
 const int sw_pin = 2;  //connect SW to digital pin 2
@@ -10,7 +11,7 @@ const int IN2 = 9; //connect IN2 to digital pin 9
 const int IN3 = 10; //connect IN3 to digital pin 10
 const int IN4 = 11; //connect IN4 to digital pin 11
 
-Stepper stepper(steps_per_revolution, IN1, IN2, IN3, IN4); //initialize stepper motor
+Stepper Stepper(steps_per_revolution, IN1, IN2, IN3, IN4); //initialize stepper motor
 
 void setup() {
 
@@ -21,15 +22,16 @@ void setup() {
 void loop() {
   
   bool button_state = digitalRead(sw_pin);
+
   if(button_state){
   
-    //int initial_x_value = analogRead(x_pin);
-    //int mapped_x_value = map(initial_x_value, 0, 1023, 2, -3);
+    // int initial_x_value = analogRead(x_pin);
+    // int mapped_x_value = map(initial_x_value, 0, 1023, 2, -3);
     int initial_y_value = analogRead(y_pin);
     int mapped_y_value = map(initial_y_value, 0, 1023, -4, 6);
     int final_y_value = constrain(mapped_y_value, 0, 6);
     int motor_speed = map(final_y_value, 0, 6, 5, 12);
-    stepper.setSpeed(motor_speed);
-    stepper.step(steps_per_revolution/2048);
+    Stepper.setSpeed(motor_speed);
+    Stepper.step(steps_per_revolution/2048);
   }  
 }

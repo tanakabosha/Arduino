@@ -1,0 +1,4 @@
+
+
+EEPROM_write	KEYWORD2
+EEPROM_read	KEYWORD2
