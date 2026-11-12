@@ -1,7 +1,7 @@
 /* This is an Arduino sketch that changes the on-board LED blink period using an interrupt */
 
 const int interrupt_pin	=	2;
-const int led_pin	=	13;
+const int led_pin	=	13; 
 
 int period	 = 500;
 
@@ -15,9 +15,9 @@ void setup() {
 
 void loop() {
 
-	digitalWrite(led_pin,	HIGH);
+	digitalWrite(led_pin, HIGH);
 	delay(period);
-	digitalWrite(led_pin,	LOW);
+	digitalWrite(led_pin, LOW);
 	delay(period);		
 }
 
